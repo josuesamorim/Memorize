@@ -1,17 +1,13 @@
-//
-//  MemorizeApp.swift
-//  Memorize
-//
-//  Created by Josué Amorim on 12/03/23.
-//
-
 import SwiftUI
 
 @main
-struct MemorizeApp: App {
+struct TestsApp: App {
     var body: some Scene {
+        
+        let game = EmojiMemory()
+        
         WindowGroup {
-            ContentView()
+            ContentView(viewModel: game)
         }
     }
 }

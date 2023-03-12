@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		99D5965029BE52AA001E137A /* EmojiMemory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D5964F29BE52AA001E137A /* EmojiMemory.swift */; };
+		99D5965229BE52E2001E137A /* MemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D5965129BE52E2001E137A /* MemoryGame.swift */; };
+		99D5965429BE5307001E137A /* EmojiTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D5965329BE5307001E137A /* EmojiTheme.swift */; };
 		99DF8D4B29BE5025009061C8 /* MemorizeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DF8D4A29BE5025009061C8 /* MemorizeApp.swift */; };
 		99DF8D4D29BE5025009061C8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DF8D4C29BE5025009061C8 /* ContentView.swift */; };
 		99DF8D4F29BE5026009061C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99DF8D4E29BE5026009061C8 /* Assets.xcassets */; };
@@ -14,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		99D5964F29BE52AA001E137A /* EmojiMemory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiMemory.swift; sourceTree = "<group>"; };
+		99D5965129BE52E2001E137A /* MemoryGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGame.swift; sourceTree = "<group>"; };
+		99D5965329BE5307001E137A /* EmojiTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiTheme.swift; sourceTree = "<group>"; };
 		99DF8D4729BE5025009061C8 /* Memorize.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memorize.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99DF8D4A29BE5025009061C8 /* MemorizeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizeApp.swift; sourceTree = "<group>"; };
 		99DF8D4C29BE5025009061C8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,6 +59,9 @@
 			children = (
 				99DF8D4A29BE5025009061C8 /* MemorizeApp.swift */,
 				99DF8D4C29BE5025009061C8 /* ContentView.swift */,
+				99D5964F29BE52AA001E137A /* EmojiMemory.swift */,
+				99D5965129BE52E2001E137A /* MemoryGame.swift */,
+				99D5965329BE5307001E137A /* EmojiTheme.swift */,
 				99DF8D4E29BE5026009061C8 /* Assets.xcassets */,
 				99DF8D5029BE5026009061C8 /* Preview Content */,
 			);
@@ -137,7 +146,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99D5965429BE5307001E137A /* EmojiTheme.swift in Sources */,
 				99DF8D4D29BE5025009061C8 /* ContentView.swift in Sources */,
+				99D5965029BE52AA001E137A /* EmojiMemory.swift in Sources */,
+				99D5965229BE52E2001E137A /* MemoryGame.swift in Sources */,
 				99DF8D4B29BE5025009061C8 /* MemorizeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,11 +282,13 @@
 				DEVELOPMENT_TEAM = 25LV6TU97D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.puzzle-games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -299,11 +313,13 @@
 				DEVELOPMENT_TEAM = 25LV6TU97D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.puzzle-games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
