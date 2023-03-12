@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img alt="Memorize" title="Memorize" src="https://user-images.githubusercontent.com/79451027/224567634-471709ae-92a1-4129-a303-fcc1f394583b.svg"  width="10%"/>
+  <img alt="Memorize" title="Memorize" src="https://user-images.githubusercontent.com/79451027/224569485-c92eef9b-68de-4364-8ebc-8163f75a5b2a.svg"  width="30%"/>
 </h1>
 
 <p align="center">
