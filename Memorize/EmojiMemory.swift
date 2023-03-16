@@ -21,7 +21,8 @@ class EmojiMemory: ObservableObject {
     }
     
     var cards: [MemoryGame<String>.Cards] {
-        model.cards
+        model.getCard
+        //model.cards
     }
     
     var score: Int {
