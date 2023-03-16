@@ -20,6 +20,10 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
         
     }
     
+    var getCard: [Cards] {
+        cards
+    }
+    
     
     
     struct Cards: Identifiable {
