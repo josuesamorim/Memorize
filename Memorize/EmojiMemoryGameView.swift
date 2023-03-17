@@ -2,39 +2,39 @@ import SwiftUI
 
 
 
-struct ContentView: View {
+struct EmojiMemoryGameView: View {
     
-    @ObservedObject var viewModel: EmojiMemory
+    @ObservedObject var game: EmojiMemoryGame
     
     var body: some View {
         ScrollView {
             HStack{
-                Text(viewModel.theme.name)
+                Text(game.theme.name)
                 Spacer()
-                Text(String(viewModel.score))
+                Text(String(game.score))
             }
             LazyVGrid(columns: [GridItem(.adaptive(minimum: 90))]) {
-                ForEach(viewModel.cards){
+                ForEach(game.cards){
                     cards in CardView(card: cards)
                         .aspectRatio(2/3, contentMode: .fill)
                         .onTapGesture {
-                            viewModel.choose(cards)
+                            game.choose(cards)
                             
                         }
-                        .foregroundColor(viewModel.theme.color)
+                        .foregroundColor(game.theme.color)
                     
                 }
                 
             }
         }
         .padding(.horizontal)
-        HStack {
+        HStack(alignment: .center) {
             Image(systemName: "goforward")
             Text("NewGame")
                 
         }.font(.title)
             .onTapGesture {
-                viewModel.changeTheme()
+                game.changeTheme()
             }
         
     }
@@ -42,8 +42,9 @@ struct ContentView: View {
     
     struct CardView: View {
         
-        var card: MemoryGame<String>.Cards
-        var viewModel = EmojiMemory()
+         var card: EmojiMemoryGame.Card
+         var viewModel = EmojiMemoryGame()
+        
         
         var body: some View {
             
@@ -73,8 +74,8 @@ struct ContentView: View {
     struct ContentView_Previews: PreviewProvider {
         
         static var previews: some View {
-            let game = EmojiMemory()
-            ContentView(viewModel: game)
+            let game = EmojiMemoryGame()
+            EmojiMemoryGameView(game: game)
         }
     }
     
