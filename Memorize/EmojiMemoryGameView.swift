@@ -42,32 +42,44 @@ struct EmojiMemoryGameView: View {
     
     struct CardView: View {
         
-         var card: EmojiMemoryGame.Card
-         var viewModel = EmojiMemoryGame()
+        var card: EmojiMemoryGame.Card
+        var viewModel = EmojiMemoryGame()
         
         
         var body: some View {
             
-            let shape = RoundedRectangle(cornerRadius: 20)
-            ZStack {
-                if card.isFaceUp {
-                    shape.foregroundColor(.white)
-                    shape.strokeBorder(lineWidth: 5)
-                        //.foregroundColor(.red)
-                    Text(card.content).font(.largeTitle)
-                }
-                
-                else if card.isMatched == true{
-                    shape.opacity(0.0)
-                }
-                
-                else {
-                    shape.foregroundColor(.red)
+            let shape = RoundedRectangle(cornerRadius: DrawingConstants.cornerRadius)
+            
+            GeometryReader { geometry in
+                ZStack {
+                    if card.isFaceUp {
+                        shape.foregroundColor(.white)
+                        shape.strokeBorder(lineWidth: DrawingConstants.lineWidth)
+                        Text(card.content).font(font(in: geometry.size))
+                    }
+                    
+                    else if card.isMatched == true{
+                        shape.opacity(0)
+                    }
+                    
+                    else {
+                        shape.fill()
+                    }
                 }
             }
-            
+        }
+        
+        private func font(in size: CGSize) -> Font {
+            Font.system(size: min(size.width, size.height * DrawingConstants.fontScale))
+        }
+        
+        private struct DrawingConstants {
+            static let cornerRadius: CGFloat = 20
+            static let lineWidth: CGFloat = 5
+            static let fontScale: CGFloat = 0.5
         }
     }
+    
     
     
     
