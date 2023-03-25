@@ -3,14 +3,20 @@ import SwiftUI
 
 struct MemoryGame<CardContent> where CardContent: Equatable {
     
-    private var indexOfTheOneAndOnlyFaceUpCard: Int?
+    private var indexOfTheOneAndOnlyFaceUpCard: Int? {
+        
+        get { cards.indices.filter({cards[$0].isFaceUp}).oneAndOnly }
+        
+        set { cards.indices.forEach{ cards[$0].isFaceUp = ($0 == newValue)} }
+    }
+   
     
     var cards: [Cards]
     
     var score = 0
     
     init(numberOfPairOfCards: Int, createGame: (Int) -> CardContent) {
-        cards = [Cards]()
+        cards = []
         
         for pairIndex in 0..<numberOfPairOfCards {
             let content: CardContent = createGame(pairIndex)
@@ -27,10 +33,10 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
     
     
     struct Cards: Identifiable {
-        var isFaceUp: Bool = false
-        var isMatched: Bool = false
-        var content: CardContent
-        var id: Int
+        var isFaceUp = false
+        var isMatched = false
+        let content: CardContent
+        let id: Int
     }
     
     //MARK: - Intent
@@ -52,18 +58,27 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
                 }
                 //bugus - tem que consertar
                 score += 2
-                indexOfTheOneAndOnlyFaceUpCard = nil
+                cards[chosenIndex].isFaceUp = true
             } else {
-                for index in cards.indices {
-                    cards[index].isFaceUp = false
-                }
+               
                 //bugus - tem que consertar
-                score -= 1
                 indexOfTheOneAndOnlyFaceUpCard = chosenIndex
+                score -= 1
+               
             }
-            cards[chosenIndex].isFaceUp.toggle()
+            
         }
         
     }
     
+}
+
+extension Array {
+    var oneAndOnly: Element? {
+        if count == 1 {
+            return first
+        } else {
+            return nil
+        }
+    }
 }
